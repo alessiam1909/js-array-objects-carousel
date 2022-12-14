@@ -109,8 +109,7 @@
     float: right;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    transform: translate(100%, -107%);
+    height: 50vh;
     background-color: black;
 }
 
