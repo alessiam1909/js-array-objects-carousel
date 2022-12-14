@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container{
@@ -28,6 +29,7 @@
 .item img{
     width: 100%;
     object-fit: cover;
+    
 }
 
 .arrow{
@@ -55,7 +57,7 @@
     background-color: rgba(174, 174, 174, 1);   
 }
 
-.item.active{
+.item.active, .titles.active, .descrizione.active{
     display: block;
 }
 
@@ -81,4 +83,24 @@
 
 .hidden{
     display: none;
+}
+
+.titles{
+    color: rgb(255, 255, 255);
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    right: 20px;
+    margin-bottom: 20px;
+}
+
+.descrizione{
+    color: rgb(255, 255, 255);
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    right: 20px;
+    margin-bottom: 10px;
 }
