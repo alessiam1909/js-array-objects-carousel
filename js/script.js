@@ -31,17 +31,24 @@ const imagesArray = [
 
 //Creiamo dinamicamente i div con le immagini del carosello
 let itemsContent = '';
+let itemsThumbnails = '';
 
 for(i=0; i<imagesArray.length; i++){
     itemsContent += `<div class="item">
         <img src="./img/${imagesArray[i].img}">
     </div> <h2 class="titles">${imagesArray[i].nome}</h2> <p class="descrizione">${imagesArray[i].descrizione}</p>`;
+
+    itemsThumbnails += `<div class="thumb"><img src="./img/${imagesArray[i].img}"></div>`
     
 };
 
 //inseriamo le immagini nel div che le deve contenere
 const itemsSlider = document.querySelector('.item-slider');
 itemsSlider.innerHTML += itemsContent;
+
+const thumbnailsPreview = document.querySelector('.thumbnails');
+
+thumbnailsPreview.innerHTML += itemsThumbnails;
 
 //Prendiamo la prima immagine dell'array e la rendiamo attiva
 
@@ -52,6 +59,10 @@ let itemActive = 0;
 
 let titles = document.getElementsByClassName('titles');
 let descrizione = document.getElementsByClassName('descrizione');
+
+const thumbnails = document.getElementsByClassName('thumb');
+
+thumbnails[itemActive].classList.add('active');
 
 items[itemActive].classList.add('active');
 titles[itemActive].classList.add('active');
@@ -74,6 +85,7 @@ next.addEventListener('click', function(){
           circles[itemActive].classList.remove('active');
           titles[itemActive].classList.remove('active');
           descrizione[itemActive].classList.remove('active');
+          thumbnails[itemActive].classList.remove('active');
   
           //incremento il suo valore di 1
           itemActive++;
@@ -84,6 +96,7 @@ next.addEventListener('click', function(){
           circles[itemActive].classList.add('active');
           titles[itemActive].classList.add('active');
           descrizione[itemActive].classList.add('active');
+          thumbnails[itemActive].classList.add('active');
           console.log(itemActive);
 
           
@@ -92,6 +105,7 @@ next.addEventListener('click', function(){
         circles[itemActive].classList.remove('active');
         titles[itemActive].classList.remove('active');
         descrizione[itemActive].classList.remove('active');
+        thumbnails[itemActive].classList.remove('active');
 
         itemActive = 0;
 
@@ -99,6 +113,7 @@ next.addEventListener('click', function(){
         circles[itemActive].classList.add('active');
         titles[itemActive].classList.add('active');
         descrizione[itemActive].classList.add('active');
+        thumbnails[itemActive].classList.add('active');
      };
 
 
@@ -112,6 +127,7 @@ prev.addEventListener('click', function(){
             circles[itemActive].classList.remove('active');
             titles[itemActive].classList.remove('active');
             descrizione[itemActive].classList.remove('active');
+            thumbnails[itemActive].classList.remove('active');
     
             //decremento il suo valore di 1
             itemActive--;
@@ -119,6 +135,7 @@ prev.addEventListener('click', function(){
             items[itemActive].classList.add('active');
             titles[itemActive].classList.add('active');
             descrizione[itemActive].classList.add('active');
+            thumbnails[itemActive].classList.add('active');
              //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
              //stessa cosa per i cerchi
             circles[itemActive].classList.add('active');
@@ -130,6 +147,7 @@ prev.addEventListener('click', function(){
         circles[itemActive].classList.remove('active');
         titles[itemActive].classList.remove('active');
         descrizione[itemActive].classList.remove('active');
+        thumbnails[itemActive].classList.remove('active');
 
         itemActive = items.length -1;
 
@@ -137,6 +155,7 @@ prev.addEventListener('click', function(){
         circles[itemActive].classList.add('active');
         titles[itemActive].classList.add('active');
         descrizione[itemActive].classList.add('active');
+        thumbnails[itemActive].classList.add('active');
     }
 });
 

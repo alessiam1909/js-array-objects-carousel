@@ -104,3 +104,27 @@
     right: 20px;
     margin-bottom: 10px;
 }
+
+.thumbnails{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transform: translate(100%, -107%);
+    background-color: black;
+}
+
+.thumb{
+    width: 100%;
+    height: calc(100% / 5);
+    opacity: 0.5;
+}
+
+.thumb img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.thumb.active{
+    opacity: 1;
+}
